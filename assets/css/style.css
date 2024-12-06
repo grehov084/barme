@@ -1,4 +1,5 @@
 @import url("../fonts/geologica/style.css");
+/*
 @font-face {
     font-family: 'Alethia Pro';
     src: local('Alethia Pro Italic'), local('AlethiaPro-Italic'), url('../fonts/alethiapro/Alethiaproitalic.woff2') format('woff2'), url('../fonts/alethiapro/Alethiaproitalic.woff') format('woff'), url('../fonts/alethiapro/Alethiaproitalic.ttf') format('truetype');
@@ -11,7 +12,7 @@
     font-weight: 400;
     font-style: normal;
 }
-
+*/
 *{
     margin: 0;
     padding: 0;
@@ -21,15 +22,161 @@
     vertical-align: baseline;
 }
 :root{
-    --grey: rgba(106, 106, 110, 1);
+    --pink: rgba(244, 108, 162, 1);
+    --black: rgba(46, 46, 46, 1);
     --white: #fff;
 }
 body{
-    font-family: 'Alethia Pro';
+    font-family: 'Geologica Regular';
+    overflow-x: hidden;
 }
 .container{
     width: 100%;
     height: inherit;
-    max-width: 1602px;
+    max-width: 1800px;
     margin: 0 auto;
+}
+.site-header{
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+.site-header-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 0;
+}
+.site-header-action{
+    display: flex;
+    gap: 20px;
+}
+.site-header-menu-toggle span i {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4b4b4b;
+    -webkit-transition: background-color 0s 0.15s, opacity 0.15s 0.15s;
+    -o-transition: background-color 0s 0.15s, opacity 0.15s 0.15s;
+    transition: background-color 0s 0.15s, opacity 0.15s 0.15s;
+  }
+  .site-header-menu-toggle span::before, .site-header-menu-toggle span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4b4b4b;
+    -webkit-transition: background-color 0.3s, top 0.15s 0.15s, -webkit-transform 0.15s;
+    transition: background-color 0.3s, top 0.15s 0.15s, -webkit-transform 0.15s;
+    -o-transition: background-color 0.3s, top 0.15s 0.15s, transform 0.15s;
+    transition: background-color 0.3s, top 0.15s 0.15s, transform 0.15s;
+    transition: background-color 0.3s, top 0.15s 0.15s, transform 0.15s, -webkit-transform 0.15s;
+  }
+  .site-header-menu-toggle{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .site-header-menu-toggle span {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 3px;
+    --rotateUp: 0;
+    --rotateDown: 0;
+    --top: 8px;
+  }
+  .site-header-menu-toggle span::before{
+    top: calc(var(--top) * (-1));
+    transform: rotate(var(--rotateUp));
+  }
+  .site-header-menu-toggle span::after{
+    top: var(--top);
+    transform: rotate(var(--rotateDown));
+  }
+  /*=======Banner=========*/
+.banner-item{
+    width: 100%;
+    height: 1010px;
+    display: flex;
+    align-items: end;
+}
+.banner-item-bg{
+    width: 100%;
+    height: 930px;
+    position: absolute;
+    top: 0;
+}
+.banner-item-bottom{
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-item-bottom-wrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.banner-item-content{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    right: 150px;
+    position: absolute;
+    width: 100%;
+    max-width: 653px;
+}
+.banner-item-title{
+    font-size: 64px;
+    font-weight: bold;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
+.banner-item-title-color{
+    color: var(--pink);
+}
+.banner-item-description{
+    max-width: 376px;
+    line-height: 1.8;
+    padding-bottom: 40px;
+}
+.banner-item__link{
+    background-color: var(--pink);
+    text-transform: uppercase;
+    color: var(--white);
+    border-radius: 8px;
+    padding: 17px 40px;
+    text-decoration: none;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.banner-item-bottom-wrap span {
+	position: absolute; 
+    white-space: nowrap;
+    will-change: transform;
+	animation: marquee 20s linear infinite;
+}
+/*=========================*/
+.title{
+    font-size: 64px;
+    text-transform: uppercase;
+    color: var(--pink);
+}
+.site-main-section{
+    padding-top: 120px;
 }
