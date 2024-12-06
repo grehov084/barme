@@ -24,6 +24,7 @@
 :root{
     --pink: rgba(244, 108, 162, 1);
     --black: rgba(46, 46, 46, 1);
+    --grey: rgba(245, 245, 245, 1); 
     --white: #fff;
 }
 body{
@@ -179,4 +180,34 @@ body{
 }
 .site-main-section{
     padding-top: 120px;
+}
+.site-footer{
+    background-color: var(--grey);
+}
+.site-footer-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+.site-footer-title{
+    color: var(--black);
+    font-size: 20px;
+    padding-bottom: 16px;
+    font-weight: bold;
+}
+.site-footer-menu__link{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(131, 131, 131, 1);
+}
+.site-footer-menu-item:not(:last-child){
+    padding-bottom: 12px;
+}
+.site-footer-logo{
+    padding-bottom: 20px;
+}
+.site-footer-copy{
+    font-size: 16px;
+    color: rgba(131, 131, 131, 1);
+    max-width: 169px;
 }
