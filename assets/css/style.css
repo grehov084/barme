@@ -177,6 +177,7 @@ body{
     font-size: 64px;
     text-transform: uppercase;
     color: var(--pink);
+    padding-bottom: 36px;
 }
 .site-main-section{
     padding-top: 120px;
@@ -210,4 +211,191 @@ body{
     font-size: 16px;
     color: rgba(131, 131, 131, 1);
     max-width: 169px;
+}
+/*=========Catalog==========*/
+.catalog-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+}
+.catalog-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.catalog-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+.catalog-item{
+    width: 100%;
+    max-width: 435px;
+    height: 740px;
+}
+.catalog-item-wrap{
+    display: flex;
+    flex-direction: column;
+}
+.catalog-item-top{
+    height: 600px;
+    display: flex;
+    justify-content: end;
+}
+.catalog-item-img{
+    height: inherit;
+    position: absolute;
+}
+.catalog-item-pic{
+    max-width: 435px;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.catalog-item-link{
+    text-decoration: none;
+    color: var(--black);
+}
+.catalog-item-title{
+    padding: 10px 0;
+    font-size: 18px;
+}
+.catalog-item-price{
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.catalog-item-price-sale{
+    color: rgba(131, 131, 131, 1);
+    text-decoration: line-through;
+    font-weight: 100;
+}
+.catalog-item-fraction{
+    display: flex;
+    gap: 10px;
+    border: 5px solid var(--black);
+    padding: 7px 12px;
+    max-width: 215px;
+    border-radius: 8px;
+    align-items: center;
+    width: max-content;
+}
+.catalog-item-fraction-text{
+    font-size: 18px;
+}
+.catalog-show-all__link{
+    background-color: var(--pink);
+    text-decoration: none;
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 0 40px;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.catalog-item-favorite{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--white);
+    position: relative;
+    z-index: 999;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.catalog-item-special{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--pink);
+    position: relative;
+    z-index: 999;
+    top: 20px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.catalog-item-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+    padding: 0 27px;
+}
+.catalog-item-icons .catalog-item-favorite{
+    right: 0;
+}
+/*==========================*/
+.buyers-middle{
+    background-color: rgba(249, 189, 211, 1);
+}
+.buyers-top__img{
+    position: relative;
+    bottom: -4px;
+}
+.buyers__title{
+    padding-top: 60px;
+    padding-bottom: 92px;
+}
+.buyers-item{
+    width: 100%;
+    max-width: 890px;
+}
+.buyers-item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+}
+.buyers-item:not(:first-child, :nth-child(3)){
+    padding-top: 171px;
+}
+.buyers-item:nth-child(4){
+    padding-top: 245px;
+}
+.buyers-item:nth-child(5){
+    padding-top: 50px;
+}
+.buyers-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 59px;
+}
+.buyers-item__title{
+    width: 100%;
+    color: var(--pink);
+    text-transform: uppercase;
+    font-size: 48px;
+    padding-bottom: 10px;
+    max-width: 770px;
+    z-index: 999;
+}
+.buyers-item__text{
+    max-width: 770px;
+    font-size: 18px;
+    color: var(--black);
+    line-height: 1.8;
+    z-index: 999;
+    position: relative;
+}
+:nth-last-child(1 of .buyers-item),
+:nth-last-child(2 of .buyers-item){
+    display: flex;
+    justify-content: center;
+}
+.buyers-item__number{
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 200px;
+    position: absolute;
 }
