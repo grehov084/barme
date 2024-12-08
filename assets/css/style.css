@@ -201,11 +201,18 @@ body{
 }
 .site-footer-info{
     padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .site-footer-menu__link{
     text-decoration: none;
     font-size: 18px;
     color: rgba(131, 131, 131, 1);
+}
+.site-footer-info__link{
+    color: var(--black);
+    text-decoration: none;
 }
 .site-footer-menu-item:not(:last-child){
     padding-bottom: 12px;
