@@ -23,6 +23,7 @@
 }
 :root{
     --pink: rgba(244, 108, 162, 1);
+    --pink-hover: rgba(243, 92, 152, 1);
     --black: rgba(46, 46, 46, 1);
     --grey: rgba(245, 245, 245, 1); 
     --white: #fff;
@@ -51,6 +52,7 @@ body{
 }
 .site-header-action{
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 .site-header-menu-toggle span i {
@@ -196,6 +198,9 @@ body{
     padding-bottom: 16px;
     font-weight: bold;
 }
+.site-footer-info{
+    padding-bottom: 24px;
+}
 .site-footer-menu__link{
     text-decoration: none;
     font-size: 18px;
@@ -298,6 +303,7 @@ body{
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    transition: 0.5s;
 }
 .catalog-item-favorite{
     width: 48px;
@@ -337,6 +343,9 @@ body{
     right: 0;
 }
 /*==========================*/
+.site-main-sale{
+    padding-bottom: 59px;
+}
 .buyers-middle{
     background-color: rgba(249, 189, 211, 1);
 }
@@ -398,4 +407,65 @@ body{
     color: rgba(255, 255, 255, 0.4);
     font-size: 200px;
     position: absolute;
+}
+.social{
+    display: flex;
+    gap: 15px;
+}
+.social__link{
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--pink);
+}
+.about-container{
+    background-color: rgba(245, 245, 245, 1);
+    width: 100%;
+    height: 735px;
+}
+.about-wrap{
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+    z-index: 998;
+    position: relative;
+    height: 800px;
+    display: flex;
+    align-items: end;
+    background-size: 726px;
+    background-color: rgba(245, 245, 245, 1);
+}
+.about-bottom{
+    position: absolute;
+}
+.about-bg{
+    position: absolute;
+    right: 0;
+}
+.about-slogan{
+    text-transform: uppercase;
+    max-width: 402px;
+    font-size: 18px;
+}
+.about-title{
+    padding-bottom: 20px !important;
+}
+.about-content{
+    max-width: 1042px;
+    height: 100%;
+}
+.about-content-left, .about-content-right{
+    height: inherit;
+    max-height: 610px;
+}
+.about-content-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media screen {
+    .catalog-show-all__link:hover{
+        background-color: var(--pink-hover);
+    }
 }
