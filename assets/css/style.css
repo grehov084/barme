@@ -24,6 +24,7 @@
 :root{
     --pink: rgba(244, 108, 162, 1);
     --pink-hover: rgba(243, 92, 152, 1);
+    --pink-light: rgba(249, 189, 211, 1);
     --black: rgba(46, 46, 46, 1);
     --grey: rgba(245, 245, 245, 1); 
     --white: #fff;
@@ -347,7 +348,7 @@ body{
     padding-bottom: 59px;
 }
 .buyers-middle{
-    background-color: rgba(249, 189, 211, 1);
+    background-color: var(--pink-light);
 }
 .buyers-top__img{
     position: relative;
@@ -438,6 +439,7 @@ body{
 }
 .about-bottom{
     position: absolute;
+    display: flex;
 }
 .about-bg{
     position: absolute;
@@ -454,15 +456,80 @@ body{
 .about-content{
     max-width: 1042px;
     height: 100%;
+    max-height: 610px;
+    display: flex;
+    gap: 20px;
 }
 .about-content-left, .about-content-right{
     height: inherit;
-    max-height: 610px;
 }
 .about-content-left{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    max-width: 435px;
+}
+.about-content-right{
+    display: flex;
+    align-items: end;
+    max-width: 587px;
+}
+.about__text{
+    line-height: 1.65;
+    font-size: 18px;
+}
+.about__text:not(:last-child){
+    padding-bottom: 20px;
+}
+.site-main-subscribe{
+    background-color: var(--pink-light);
+}
+.subscribe-wrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 69px;
+}
+.subscribe-title{
+    font-size: 48px !important;
+    max-width: 770px;
+    text-align: center;
+    padding-bottom: 16px !important;
+}
+.subscribe-text{
+    max-width: 528px;
+    text-align: center;
+    padding-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.subscribe-action{
+    width: 100%;
+    max-width: 894px;
+}
+.subscribe-form__button{
+    padding: 17px 40px;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+}
+.subscribe-form__input{
+    width: 100%;
+    max-width: 615px;
+    padding: 14px 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+}
+.subscribe-form-wrap{
+    display: flex;
+    gap: 8px;
 }
 @media screen {
     .catalog-show-all__link:hover{
