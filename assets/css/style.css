@@ -57,6 +57,7 @@ body{
     gap: 20px;
 }
 .site-header-menu-toggle span i {
+    width: 29px;
     display: block;
     position: absolute;
     top: 0;
@@ -69,6 +70,7 @@ body{
     transition: background-color 0s 0.15s, opacity 0.15s 0.15s;
   }
   .site-header-menu-toggle span::before, .site-header-menu-toggle span::after {
+    width: 21px;
     content: "";
     display: block;
     position: absolute;
@@ -538,6 +540,9 @@ body{
     display: flex;
     gap: 8px;
 }
+/*=========Menu========*/
+
+/*=====================*/
 @media screen {
     .catalog-show-all__link:hover{
         background-color: var(--pink-hover);
