@@ -27,7 +27,7 @@
                     </div>
                     <div class="site-header-action__item">
                         <a href="" class="site-header-action__link">
-                            <img src="assets/img/icon/lk.png" alt="" class="site-header-action__img">
+                            <img src="assets/img/icon/lk.png" alt="" class="site-header-action__img site-header-action__img--login">
                         </a>
                     </div>
                     <div class="site-header-action__item">
@@ -95,6 +95,49 @@
                 </div>
             </div>
         </div>
+        <div class="site-header-auth">
+            <div class="site-header-auth-top">
+                <div class="site-header-auth-title">
+                    вход/регистрация
+                </div>
+                <img src="assets/img/icon/close.png" alt="" class="site-header__close site-header__close--auth">
+            </div>
+            <div class="site-header-auth-content">
+                <form action="" class="site-header-auth-form-reg auth-form-reg">
+                    <input type="tel" name="auth-tel" class="auth-form-reg__input" placeholder="Телефон">
+                    <input type="email" name="auth-email" class="auth-form-reg__input" placeholder="E-mail">
+                    <input type="submit" class="auth-form-reg__submit" value="Регистрация">
+                    <div class="auth-form-reg-subscribe">
+                        <input type="checkbox" class="auth-form-reg-subscribe__input" name="subscribe" id="subscribe">
+                        <label class="auth-form-reg-subscribe__label" for="subscribe">Подписаться на рассылку</label>
+                    </div>
+                    <div class="auth-form-reg-change">
+                        Войти в уже существующий аккаунт
+                    </div>
+                </form>
+                <form action="" class="site-header-login-form login-form">
+                    <input type="tel" name="login-tel" id="login-tel" class="login-form__input" placeholder="Телефон">
+                    <input type="tel" name="login-email" id="login-email" class="login-form__input" placeholder="E-mail">
+                    <input type="submit" value="Войти" class="login-form__submit">
+                    <div class="login-form-subscribe">
+                        <input type="checkbox" class="login-form-subscribe__input" name="subscribe" id="subscribe-login">
+                        <label class="login-form-subscribe__label" for="subscribe-login">Подписаться на рассылку</label>
+                    </div>
+                    <div class="login-form-change">
+                        <div class="login-form-change-item" id="login-change-tel">
+                            Войти по номеру телефона
+                        </div>
+                        <div class="login-form-change-item login-form-change-item--reg">
+                            Еще нет аккаунта?
+                        </div>
+                        <div class="login-form-change-item" id="reg">
+                            Регистрация
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="site-header-overlay"></div>
     </header>
     <main class="site-main">
         <div class="site-main-banner banner">
