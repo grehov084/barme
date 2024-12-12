@@ -80,5 +80,5 @@ authToggle.addEventListener("click", function(e){
 });
 closeToggleAuth.addEventListener("click", ()=>{
     auth.classList.remove("show");
-    body.removeAttribute.style;
+    body.removeAttribute(style);
 });
