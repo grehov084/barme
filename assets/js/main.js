@@ -1,4 +1,4 @@
-let body, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
+let body, overlay, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
 
 body = document.querySelector("body");
 bannerBottom = document.querySelector(".banner-item-bottom-text");
@@ -18,6 +18,8 @@ regForm = document.querySelector(".auth-form-reg");
 loginForm = document.querySelector(".login-form");
 changeToLogin = document.querySelector(".auth-form-reg-change");
 authToggle = document.querySelector(".site-header-action__img--login");
+overlay = document.querySelector(".site-header-overlay");
+
 loginCheck = 0;
 
 loginChange.addEventListener("click", ()=>{
@@ -48,7 +50,8 @@ changeToLogin.addEventListener("click", ()=>{
 document.addEventListener("DOMContentLoaded", ()=>{
     menu.style.height = window.innerHeight + "px";
     menuContent.style.maxHeight = window.innerHeight - 150 + "px";
-    auth.style.height = window.innerHeight  - 150 + "px";
+    auth.style.height = window.innerHeight - 79 + "px";
+    overlay.style.height = window.innerHeight + "px";
 });
 
 while(bannerBottom.offsetWidth < window.innerWidth){
@@ -65,20 +68,24 @@ bannerBottom.innerHTML += bannerBottom.innerHTML;
 
 menuToggle.addEventListener("click", ()=>{
     menu.classList.add("show");
+    overlay.classList.add("show");
     body.style.overflow = "hidden";
 });
 
 closeToggle.addEventListener("click", ()=>{
     menu.classList.remove("show");
+    overlay.classList.remove("show");
     body.removeAttribute("style");
 });
 
 authToggle.addEventListener("click", function(e){
     e.preventDefault();
     auth.classList.add("show");
+    overlay.classList.add("show")
     body.style.overflow = "hidden";
 });
 closeToggleAuth.addEventListener("click", ()=>{
     auth.classList.remove("show");
+    overlay.classList.remove("show");
     body.removeAttribute("style");
 });
