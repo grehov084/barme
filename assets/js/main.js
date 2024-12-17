@@ -1,6 +1,7 @@
-let body, overlay, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
+let body, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
 
 body = document.querySelector("body");
+header = document.querySelector(".site-header");
 bannerBottom = document.querySelector(".banner-item-bottom-text");
 bannerBottomContent = document.querySelector(".banner-item-bottom-text").innerHTML;
 counter = 0;
@@ -70,12 +71,14 @@ menuToggle.addEventListener("click", ()=>{
     menu.classList.add("show");
     overlay.classList.add("show");
     body.style.overflow = "hidden";
+    header.classList.add("site-header--height");
 });
 
 closeToggle.addEventListener("click", ()=>{
     menu.classList.remove("show");
     overlay.classList.remove("show");
     body.removeAttribute("style");
+    setTimeout(() => header.classList.remove("site-header--height"), 5000);
 });
 
 authToggle.addEventListener("click", function(e){
@@ -83,9 +86,12 @@ authToggle.addEventListener("click", function(e){
     auth.classList.add("show");
     overlay.classList.add("show")
     body.style.overflow = "hidden";
+    header.classList.add("site-header--height");
 });
 closeToggleAuth.addEventListener("click", ()=>{
     auth.classList.remove("show");
     overlay.classList.remove("show");
     body.removeAttribute("style");
+    setTimeout(() => header.classList.remove("site-header--height"), 5000);
+
 });
