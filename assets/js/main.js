@@ -1,4 +1,4 @@
-let body, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
+let body, typeItemCurrent, typeItemArr, typeCurrentSwith, typeContent, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
 
 body = document.querySelector("body");
 header = document.querySelector(".site-header");
@@ -20,8 +20,31 @@ loginForm = document.querySelector(".login-form");
 changeToLogin = document.querySelector(".auth-form-reg-change");
 authToggle = document.querySelector(".site-header-action__img--login");
 overlay = document.querySelector(".site-header-overlay");
+typeItemCurrent = document.querySelector(".catalog-setting-type-current");
+typeContent = document.querySelector(".catalog-setting-type-list");
+typeItemArr = document.querySelectorAll(".catalog-setting-type-list__item");
+typeCurrentSwith = '<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+'<path d="M1 5.99996L5.24264 10.2426L13.7279 1.75732" stroke="#F35C98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+'</svg>';
 
 loginCheck = 0;
+
+if(typeItemArr != null){
+    typeItemArr.forEach((typeItem) => {
+        
+    });
+}
+
+if(typeItemCurrent != null){
+    typeItemCurrent.addEventListener("click", ()=>{
+        if(!typeContent.classList.contains("show")){
+            typeContent.classList.add("show");
+        }
+        else{
+            typeContent.classList.remove("show");
+        }
+    });
+}
 
 loginChange.addEventListener("click", ()=>{
     if(loginCheck == 0){
