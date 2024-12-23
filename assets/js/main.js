@@ -1,9 +1,9 @@
-let body, typeItemCurrent, typeItemArr, typeCurrentSwith, typeContent, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
+let body, windowWidth, sections, typeItemCurrent, typeItemOverlay, typeItemArr, typeContent, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
 
 body = document.querySelector("body");
 header = document.querySelector(".site-header");
 bannerBottom = document.querySelector(".banner-item-bottom-text");
-bannerBottomContent = document.querySelector(".banner-item-bottom-text").innerHTML;
+bannerBottomContent = document.querySelector(".banner-item-bottom-text");
 counter = 0;
 menuToggle = document.querySelector(".site-header-menu-toggle");
 closeToggle = document.querySelector(".site-header__close");
@@ -23,15 +23,57 @@ overlay = document.querySelector(".site-header-overlay");
 typeItemCurrent = document.querySelector(".catalog-setting-type-current");
 typeContent = document.querySelector(".catalog-setting-type-list");
 typeItemArr = document.querySelectorAll(".catalog-setting-type-list__item");
-typeCurrentSwith = '<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+typeItemOverlay = document.querySelector(".catalog-settings-type-overlay");
+sections = document.querySelectorAll(".catalog-settings-item");
+
+const typeCurrentSwith = '<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">' +
 '<path d="M1 5.99996L5.24264 10.2426L13.7279 1.75732" stroke="#F35C98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
 '</svg>';
+const bodyBGactive = "rgba(0, 0, 0, 0.5)";
 
 loginCheck = 0;
 
+function removeFilterOverlay(){
+    typeItemOverlay.classList.remove("show");
+    typeContent.classList.remove("show");
+    body.removeAttribute("style");
+}
+
 if(typeItemArr != null){
     typeItemArr.forEach((typeItem) => {
-        
+        typeItem.addEventListener("click", function(e){
+            let activeElem, activeElemText, activeElemToggle, currentElemToggle, currentElem, selectedElemText;
+            activeElem = document.querySelector(".type-list-item.active");
+            activeElemText = activeElem.querySelector(".catalog-setting-type-current-text");
+            activeElemToggle = activeElem.querySelector(".type-list-item__toggle");
+            selectedElemText = document.querySelector(".catalog-setting-type-current-text");
+            currentElem = e.target;
+            if(currentElem.classList.contains("type-list-item-text") || currentElem.classList.contains("type-list-item__toggle")){
+                currentElem = currentElem.parentNode.parentNode;
+            }
+            else if(currentElem.classList.contains("type-list-item-wrap")){
+                currentElem = currentElem.parentNode;
+            }
+            else if(currentElem.tagName == "svg"){
+                currentElem = currentElem.parentNode.parentNode.parentNode;
+            }
+            else if(currentElem.tagName == "path"){
+                currentElem = currentElem.parentNode.parentNode.parentNode.parentNode;
+            }
+            if(activeElem.id != currentElem.id){
+                activeElem.classList.remove("active");
+                currentElem.classList.add("active");
+                currentElemToggle = currentElem.querySelector(".type-list-item__toggle");
+                selectedElemText.innerHTML = currentElem.querySelector(".type-list-item-text").innerHTML;
+                activeElemToggle.innerHTML = "";
+                currentElemToggle.innerHTML = typeCurrentSwith;
+                typeContent.classList.remove("show");
+                if(windowWidth < 451){
+                    removeFilterOverlay();
+                }
+                //тут дописать ajax фильтр
+            }
+        });
     });
 }
 
@@ -39,11 +81,40 @@ if(typeItemCurrent != null){
     typeItemCurrent.addEventListener("click", ()=>{
         if(!typeContent.classList.contains("show")){
             typeContent.classList.add("show");
+            if(windowWidth < 451){
+                typeItemOverlay.style.height = window.innerHeight + "px";
+                typeItemOverlay.classList.add("show");
+                body.style.overflow = "hidden";
+            }
         }
         else{
             typeContent.classList.remove("show");
         }
     });
+}
+
+if(typeItemOverlay != null){
+    typeItemOverlay.addEventListener("click", ()=>{
+        removeFilterOverlay();
+    });
+}
+
+if(sections != null){
+    sections.forEach((section)=>{
+        section.addEventListener("click", function(s){
+            let currentSection;
+            if(!section.classList.contains("active")){
+                currentSection = document.querySelector(".catalog-settings-item.active");
+                currentSection.classList.remove("active");
+                section.classList.add("active");
+                // тут дописать ajax фильтр
+            }
+        });
+    });
+}
+
+if(bannerBottomContent != null){
+    bannerBottomContent = bannerBottomContent.innerHTML;
 }
 
 loginChange.addEventListener("click", ()=>{
@@ -77,18 +148,26 @@ document.addEventListener("DOMContentLoaded", ()=>{
     auth.style.height = window.innerHeight - 79 + "px";
     overlay.style.height = window.innerHeight + "px";
 });
+window.addEventListener("load", ()=>{
+    windowWidth = window.innerWidth;
+});
+window.addEventListener("resize", ()=>{
+    windowWidth = window.innerWidth;
+});
 
-while(bannerBottom.offsetWidth < window.innerWidth){
-    if(counter == 0){
-        bannerBottom.innerHTML = " • " + bannerBottomContent + " • ";
-        counter++;
+if(bannerBottom != null){
+    while(bannerBottom.offsetWidth < window.innerWidth){
+        if(counter == 0){
+            bannerBottom.innerHTML = " • " + bannerBottomContent + " • ";
+            counter++;
+        }
+        else{
+            bannerBottom.innerHTML += " • ";
+        }
+        bannerBottom.innerHTML += bannerBottomContent;
     }
-    else{
-        bannerBottom.innerHTML += " • ";
-    }
-    bannerBottom.innerHTML += bannerBottomContent;
+    bannerBottom.innerHTML += bannerBottom.innerHTML;
 }
-bannerBottom.innerHTML += bannerBottom.innerHTML;
 
 menuToggle.addEventListener("click", ()=>{
     menu.classList.add("show");
@@ -116,5 +195,7 @@ closeToggleAuth.addEventListener("click", ()=>{
     overlay.classList.remove("show");
     body.removeAttribute("style");
     setTimeout(() => header.classList.remove("site-header--height"), 5000);
-
 });
+
+/* CARD */
+

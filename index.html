@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <div class="site">
-    <header class="site-header">
+    <header class="site-header site-header--pos">
         <div class="site-header-overlay"></div>
         <div class="container">
             <div class="site-header-wrap">
@@ -201,6 +201,7 @@
                         </div>
                         <div class="catalog-settings-right">
                             <div class="catalog-settengs-type">
+                                <div class="catalog-settings-type-overlay"></div>
                                 <div class="catalog-setting-type-current">
                                     <div class="catalog-setting-type-current-text">
                                         Новинки
@@ -211,40 +212,50 @@
                                         </svg>                                            
                                     </div>
                                 </div>
-                                <div class="catalog-setting-type-list catalog-setting-type__list">
-                                    <div class="catalog-setting-type-list__item type-list-item">
-                                        <div class="type-list-item-text">
-                                            Новинки
-                                        </div>
-                                        <div class="type-list-item__toggle">
-                                            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 5.99996L5.24264 10.2426L13.7279 1.75732" stroke="#F35C98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>                                                
-                                        </div>                                     
+                                <div class="catalog-setting-type-list catalog-setting-type__list" id="new">
+                                    <div class="catalog-setting-type-list__item type-list-item active">
+                                        <div class="type-list-item-wrap">
+                                            <div class="type-list-item-text">
+                                                Новинки
+                                            </div>
+                                            <div class="type-list-item__toggle">
+                                                <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 5.99996L5.24264 10.2426L13.7279 1.75732" stroke="#F35C98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>                                                
+                                            </div> 
+                                        </div>                                    
                                     </div>
-                                    <div class="catalog-setting-type-list__item type-list-item">
-                                        <div class="type-list-item-text">
-                                            Хиты
+                                    <div class="catalog-setting-type-list__item type-list-item" id="hits">
+                                        <div class="type-list-item-wrap">
+                                            <div class="type-list-item-text">
+                                                Хиты
+                                            </div>
+                                            <div class="type-list-item__toggle"></div>
                                         </div>
-                                        <div class="type-list-item__toggle"></div>
                                     </div>
-                                    <div class="catalog-setting-type-list__item type-list-item">
-                                        <div class="type-list-item-text">
-                                            По названию
+                                    <div class="catalog-setting-type-list__item type-list-item" id="onName">
+                                        <div class="type-list-item-wrap">
+                                            <div class="type-list-item-text">
+                                                По названию
+                                            </div>
+                                            <div class="type-list-item__toggle"></div>  
                                         </div>
-                                        <div class="type-list-item__toggle"></div>  
                                     </div>
-                                    <div class="catalog-setting-type-list__item type-list-item">
-                                        <div class="type-list-item-text">
-                                            По возрастанию цены
+                                    <div class="catalog-setting-type-list__item type-list-item" id="onUp">
+                                        <div class="type-list-item-wrap">
+                                            <div class="type-list-item-text">
+                                                По возрастанию цены
+                                            </div>
+                                            <div class="type-list-item__toggle"></div>
                                         </div>
-                                        <div class="type-list-item__toggle"></div>
                                     </div>
-                                    <div class="catalog-setting-type-list__item type-list-item">
-                                        <div class="type-list-item-text">
-                                            По убыванию цены
-                                        </div>
-                                        <div class="type-list-item__toggle"></div>                                        
+                                    <div class="catalog-setting-type-list__item type-list-item" id="onDown">
+                                        <div class="type-list-item-wrap">
+                                            <div class="type-list-item-text">
+                                                По убыванию цены
+                                            </div>
+                                            <div class="type-list-item__toggle"></div> 
+                                        </div>                                       
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +273,9 @@
                                                     <img src="assets/img/catalog_1.png" alt="" class="catalog-item-pic">
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                             <div class="catalog-item-bottom">
@@ -285,7 +298,7 @@
                                     </a>
                                 </div>
                                 <div class="catalog-item">
-                                    <a href="" class="catalog-item-link">
+                                    <a href="card.html" class="catalog-item-link">
                                         <div class="catalog-item-wrap">
                                             <div class="catalog-item-top">
                                                 <div class="catalog-item-img">
@@ -297,7 +310,9 @@
                                                         new
                                                     </div>
                                                     <div class="catalog-item__favorite">
-                                                        <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
                                                     </div>
                                                 </div>
                                             </div>
@@ -328,7 +343,9 @@
                                                     <img src="assets/img/catalog_3.png" alt="" class="catalog-item-pic">
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                             <div class="catalog-item-bottom">
@@ -363,7 +380,9 @@
                                                     -50%
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -412,7 +431,9 @@
                                                     new
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -448,7 +469,9 @@
                                                     new
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -483,7 +506,9 @@
                                                     new
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -519,7 +544,9 @@
                                                     new
                                                 </div>
                                                 <div class="catalog-item__favorite">
-                                                    <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -650,7 +677,10 @@
                                                 -20%
                                             </div>
                                             <div class="catalog-item__favorite">
-                                                <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                                             </div>
                                         </div>
                                     </div>
@@ -686,7 +716,10 @@
                                                 -50%
                                             </div>
                                             <div class="catalog-item__favorite">
-                                                <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                                             </div>
                                         </div>
                                     </div>
@@ -721,7 +754,10 @@
                                                 -30%
                                             </div>
                                             <div class="catalog-item__favorite">
-                                                <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                                             </div>
                                         </div>
                                     </div>
@@ -757,7 +793,10 @@
                                                 -20%
                                             </div>
                                             <div class="catalog-item__favorite">
-                                                <img src="assets/img/icon/favorite.png" alt="" class="catalog-item__favorite__img">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 17C10 17 1 11.9875 1 5.97234C1 -0.0427764 8 -0.544034 10 4.16221C12 -0.544034 19 -0.0427764 19 5.97234C19 11.9875 10 17 10 17Z" stroke="#F46CA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                                             </div>
                                         </div>
                                     </div>
