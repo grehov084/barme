@@ -26,6 +26,7 @@
     --pink-hover: rgba(243, 92, 152, 1);
     --pink-light: rgba(249, 189, 211, 1);
     --black: rgba(46, 46, 46, 1);
+    --card-black: rgba(43, 42, 41, 1);
     --grey: rgba(245, 245, 245, 1); 
     --grey-lighter:  rgba(131, 131, 131, 1);
     --white: #fff;
@@ -895,7 +896,70 @@ body{
     color: var(--grey-lighter);
 }
 /*=========CARD=============*/
-
+.card{
+    padding-bottom: 100px;
+}
+.card-top{
+    display: flex;
+    justify-content: space-between;
+}
+.card-left{
+    border: 2px solid black;
+    width: 100%;
+    max-width: 1042px;
+}
+.card-right{
+    width: 100%;
+    max-width: 697px;
+    padding-top: 20px;
+}
+.card-name{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--card-black);
+    padding-bottom: 8px;
+}
+.card-number{
+    font-size: 18px;
+    color: var(--grey-lighter);
+    padding-bottom: 24px;
+}
+.card-price{
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    padding-bottom: 24px;
+}
+.card-price-old, .card-price-current{
+    display: flex;
+}
+.card-price-val, .card-price-measure{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black);
+}
+.card-price-val--old, .card-price-measure--old{
+    font-size: 18px;
+    color: var(--grey-lighter);
+}
+.card-price-old{
+    text-decoration: line-through;
+}
+.card-fraction{
+    border-radius: 8px;
+    border: 5px solid var(--pink);
+    max-width: 200px;
+    padding: 5px 12px;
+}
+.card-fraction-wrap{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.card-fraction-pic{
+    display: flex;
+}
 /*==========================*/
 @media screen {
     .catalog-show-all__link:hover,
