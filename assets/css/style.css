@@ -29,6 +29,7 @@
     --card-black: rgba(43, 42, 41, 1);
     --grey: rgba(245, 245, 245, 1); 
     --grey-lighter:  rgba(131, 131, 131, 1);
+    --grey-border: rgba(218, 218, 218, 1);
     --white: #fff;
 }
 body{
@@ -50,7 +51,7 @@ body{
     margin-bottom: 48px;
 }
 .site-header:not(.site-header--pos){
-    border-bottom: 1px solid rgba(218, 218, 218, 1);
+    border-bottom: 1px solid var(--grey-border);
 }
 .site-header--pos{
     position: absolute;
@@ -904,7 +905,6 @@ body{
     justify-content: space-between;
 }
 .card-left{
-    border: 2px solid black;
     width: 100%;
     max-width: 1042px;
 }
@@ -924,6 +924,7 @@ body{
     font-size: 18px;
     color: var(--grey-lighter);
     padding-bottom: 24px;
+    font-family: "Geologica ExtraLight";
 }
 .card-price{
     display: flex;
@@ -951,6 +952,7 @@ body{
     border: 5px solid var(--pink);
     max-width: 200px;
     padding: 5px 12px;
+    cursor: pointer;
 }
 .card-fraction-wrap{
     display: flex;
@@ -959,6 +961,209 @@ body{
 }
 .card-fraction-pic{
     display: flex;
+    gap: 18px;
+}
+.card-action{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-top: 40px;
+}
+.card-action-basket{
+    color: var(--white);
+    background-color: var(--pink);
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 17px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.card-action-favorite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 18px;
+    border-radius: 50%;
+    background-color: var(--grey);
+}
+.card-params{
+    padding-top: 40px;
+}
+.card-params-size{
+    padding-top: 32px;
+    padding-bottom: 64px;
+}
+.card-params-size-title{
+    font-size: 18px;
+    font-family: "Geologica ExtraLight";
+}
+.card-params-size-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 0;
+}
+.card-params-size-item, .content-product-size-list-item{
+    padding: 7px 28px;
+    border-radius: 8px;
+    border: 1px solid var(--black);
+    transition: 0.5s;
+    font-size: 18px;
+    color: var(--black);
+    cursor: pointer;
+}
+.card-params-size-item.active, .content-product-size-list-item.active{
+    background-color: var(--pink);
+    border-color: var(--pink);
+    color: var(--white);
+}
+.card-params-size-choose{
+    font-family: "Geologica ExtraLight";
+    font-size: 18px;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+    width: max-content;
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+.card-info-item{
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--grey-border);
+    padding: 24px 0;
+}
+.card-info-item-title{
+    font-size: 20px;
+}
+.card-info-item-activator{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.card-info-item-content{
+    font-size: 18px;
+    font-family: "Geologica ExtraLight";
+    color: var(--black);
+    max-height: 0;
+    overflow: hidden;
+}
+.card-info-item-content.show{
+    padding-top: 20px;
+    overflow: unset;
+}
+.content-product-size-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 0 40px 12px 40px;
+}
+.content-product-top-text{
+    font-size: 16px;
+    font-family: "Geologica ExtraLight";
+    color: var(--grey-lighter);
+    padding-bottom: 12px;
+    text-align: center;
+}
+.content-product-prop{
+    display: flex;
+    justify-content: space-between;
+}
+.content-product-prop:not(:last-child){
+    padding-bottom: 20px;
+}
+.content-structure-item{
+    display: flex;
+    justify-content: space-between;
+}
+.content-structure-item:not(:last-child){
+    padding-bottom: 20px;
+}
+.content-structure-item-left{
+    width: 100%;
+    max-width: 150px;
+    color: var(--black);
+    font-size: 18px;
+}
+.content-structure-item-right{
+    width: 100%;
+    max-width: 543px;
+    color: var(--black);
+    font-size: 18px;
+}
+.item-care-top{
+    line-height: 1.5;
+}
+.item-care-elem-pic{
+    cursor: pointer;
+}
+.item-care-elem-text{
+    font-size: 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.1);
+    width: max-content;
+    padding: 8px 12px;
+    display: none;
+}
+.item-care-bottom{
+    display: flex;
+    gap: 12px;
+    padding-top: 12px;
+}
+.card-left{
+    display: flex;
+    gap: 20px;
+}
+.card-pic-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 80px;
+}
+.card-pic-list-item{
+    max-width: inherit;
+    height: 107px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card-pic-list-item.active{
+    border: 1px solid var(--black);
+}
+.card-pic-list-item__img{
+    max-width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+.card-pic-main{
+    width: 100%;
+}
+.card-pic-main__img{
+    width: inherit;
+    object-fit: cover;
+    border-radius: 8px;
+    
+    cursor: url("assets/img/card/cursor.png"), pointer;
+}
+@media screen {
+    .card-action-basket:hover{
+        background-color: var(--pink-hover);
+    }
+    .card-params-size-item:hover,
+    .content-product-size-list-item:hover{
+        background-color: var(--pink);
+        border-color: var(--pink);
+        color: var(--white);
+    }
+    .card-pic-main__img:hover{
+
+    }
 }
 /*==========================*/
 @media screen {
