@@ -22,7 +22,7 @@
     vertical-align: baseline;
 }
 :root{
-    --pink: rgba(244, 108, 162, 1);
+    --pink: rgb(244, 108, 162);
     --pink-hover: rgba(243, 92, 152, 1);
     --pink-light: rgba(249, 189, 211, 1);
     --black: rgba(46, 46, 46, 1);
@@ -1148,8 +1148,22 @@ body{
     width: inherit;
     object-fit: cover;
     border-radius: 8px;
-    
-    cursor: url("assets/img/card/cursor.png"), pointer;
+
+    cursor: url("../img/card/cursor.png"), pointer;
+}
+.card-bottom{
+    padding-top: 100px;
+}
+.card-bottom-title{
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-bottom: 24px;
+    font-weight: bold;
+}
+.card-bottom-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 @media screen {
     .card-action-basket:hover{

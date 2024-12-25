@@ -1,4 +1,4 @@
-let body, windowWidth, sections, typeItemCurrent, typeItemOverlay, typeItemArr, typeContent, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
+let body, windowWidth, favorite, sections, typeItemCurrent, typeItemOverlay, typeItemArr, typeContent, overlay, header, loginCheck, changeToLogin, regForm, loginForm, changeToReg, bannerBottom, bannerBottomContent, counter, menuToggle, authToggle, closeToggle, closeToggleAuth, menu, auth, menuContent, loginChange, loginMail, loginTel;
 
 body = document.querySelector("body");
 header = document.querySelector(".site-header");
@@ -25,6 +25,7 @@ typeContent = document.querySelector(".catalog-setting-type-list");
 typeItemArr = document.querySelectorAll(".catalog-setting-type-list__item");
 typeItemOverlay = document.querySelector(".catalog-settings-type-overlay");
 sections = document.querySelectorAll(".catalog-settings-item");
+favorite = document.querySelectorAll(".favorite");
 
 const typeCurrentSwith = '<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">' +
 '<path d="M1 5.99996L5.24264 10.2426L13.7279 1.75732" stroke="#F35C98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
@@ -197,5 +198,19 @@ closeToggleAuth.addEventListener("click", ()=>{
     setTimeout(() => header.classList.remove("site-header--height"), 5000);
 });
 
-/* CARD */
+if(favorite != null){
+    favorite.forEach((favoriteItem)=>{
+        favoriteItem.addEventListener("click", ()=>{
+            let favoriteIcon;
+            favoriteIcon = favoriteItem.querySelector("path");
+            if(!favoriteIcon.hasAttribute("fill")){
+                favoriteIcon.setAttribute("fill", "#f46ca2");
+                /* дописать добавление в избранное */
+            }
+            else{
+                favoriteIcon.removeAttribute("fill");
+            }
+        });
+    });
+}
 
