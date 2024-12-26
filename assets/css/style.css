@@ -418,6 +418,8 @@ body{
     width: 100%;
     max-width: 435px;
     height: 740px;
+    display: flex;
+    justify-content: end;
 }
 .catalog-item-wrap{
     display: flex;
@@ -496,13 +498,13 @@ body{
     height: max-content;
     border-radius: 50%;
     background-color: var(--white);
-    position: relative;
+    position: absolute;
     z-index: 998;
-    top: 20px;
-    right: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+    cursor: pointer;
 }
 .catalog-item-special{
     width: 48px;
@@ -1050,10 +1052,13 @@ body{
     color: var(--black);
     max-height: 0;
     overflow: hidden;
+    transition: 1s;
+    opacity: 0;
 }
 .card-info-item-content.show{
-    padding-top: 20px;
     overflow: unset;
+    padding: 20px 0;
+    opacity: 1;
 }
 .content-product-size-list{
     display: flex;
@@ -1475,24 +1480,24 @@ body{
         gap: 30px 0;
     }
     .catalog-item {
-        max-width: 49%;
+        max-width: max-content;
     }
     .catalog-item-pic, .catalog-item-wrap, .catalog-item-top{
         max-width: 100%;
         width: 100%;
+    }
+    .catalog-item-link{
+        max-width: 100%;
     }
     .catalog-item-top {
         height: 540px;
         flex-direction: column;
         align-items: end;
     }
-    .catalog-item {
-        max-width: 39%;
-    }
     .catalog-item-icons {
-        max-width: 100%;
-        position: relative;
-        top: -537px;
+        max-width: 390px;
+        position: absolute;
+        
     }
     .catalog-item__favorite{
         margin: 10px;
@@ -1574,7 +1579,7 @@ body{
         height: 473px;
     }
     .catalog-item-icons{
-        top: -471px;
+        max-width: 340px;
     }
     .about-bg{
         position: relative;
@@ -1662,7 +1667,7 @@ body{
         height: 422px;
     }
     .catalog-item-icons{
-        top: -421px;
+        max-width: 307px;
     }
     .catalog-item {
         max-width: 47%;
@@ -1675,14 +1680,26 @@ body{
         max-width: 100%;
     }
 }
+@media(max-width: 682px){
+    .catalog-item-special{
+        left: 0;
+    }
+    .catalog-item-icons {
+        max-width: 266px;
+    }
+}
+@media(max-width: 630px){
+    .catalog-item-icons {
+        max-width: 250px;
+    }
+}
 @media(max-width: 600px){
     .catalog-item-top {
         height: 373px;
     }
     .catalog-item-icons {
-        top: -370px;
+       max-width: 245px;
     }
-
     .title, .subscribe-title{
         font-size: 28px !important;
     }
@@ -1696,7 +1713,7 @@ body{
         height: 300px;
     }
     .catalog-item-icons {
-        top: -299px;
+        max-width: 195px;
     }
     .site-footer-wrap{
         grid-template-areas: "logo logo"
@@ -1722,7 +1739,7 @@ body{
         height: 268px;
     }
     .catalog-item-icons {
-        top: -266px;
+        max-width: 166px;
     }
     .catalog-item-fraction-text {
         font-size: 14px;
@@ -1739,14 +1756,13 @@ body{
     .about-wrap{
         display: grid;
     }
-
 }
 @media(max-width: 450px){
     .catalog-item-top {
         height: 240px;
     }
     .catalog-item-icons {
-        top: -239px;
+        max-width: 157px;
     }
     .site-header-logo__img{
         max-width: 110px;
@@ -1794,6 +1810,11 @@ body{
         font-size: 16px;
     }
 }
+@media(max-width: 400px){
+    .catalog-item-icons {
+        max-width: 150px;
+    }
+}
 @media(max-width: 385px){
     .catalog-item-fraction {
         padding: 5px;
@@ -1813,16 +1834,32 @@ body{
         width: 28px;
         height: 28px;
     }
+    .catalog-item-icons {
+        max-width: 145px;
+    }
 }
 @media(max-width: 375px){
     .site-header-action__img{
         width: 23px;
         height: 23px;
     }
+    .catalog-item-icons {
+        max-width: 140px;
+    }
+}
+@media(max-width: 365px){
+    .catalog-item-icons {
+        max-width: 135px;
+    }
 }
 @media(max-width: 360px){
     .site-header-logo__img {
         max-width: 100px;
+    }
+}
+@media(max-width: 355px){
+    .catalog-item-icons {
+        max-width: 120px;
     }
 }
 @media(max-width: 350px){
@@ -1842,6 +1879,11 @@ body{
 @media(max-width: 340px){
     .site-header-action{
         gap: 15px;
+    }
+}
+@media(max-width: 335px){
+    .catalog-item-icons {
+        max-width: 115px;
     }
 }
 @media(max-width: 330px){
