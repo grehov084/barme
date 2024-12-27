@@ -136,6 +136,9 @@
     border-bottom: 1px solid var(--grey-border);
     padding: 24px 0;
 }
+.card-info-item-toogle.active{
+    transform: rotateX(180deg);
+}
 .card-info-item-title{
     font-size: 20px;
 }

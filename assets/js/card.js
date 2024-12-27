@@ -89,16 +89,17 @@ sliderPictures.forEach((sliderPicture)=>{
 
 propsItems.forEach((propsItem)=>{
     propsItem.addEventListener("click", ()=>{
-        let propsContent, height;
+        let propsContent, height, propsToggle;
         height = 0;
         propsContent = propsItem.parentNode.querySelector(".card-info-item-content");
+        propsToggle = propsItem.parentNode.querySelector(".card-info-item-toogle");
         if(!propsContent.classList.contains("show")){
             for(let i = 0; i < propsContent.childElementCount; i++){
-                console.log(propsContent.children[i].offsetHeight);
                 height += propsContent.children[i].offsetHeight;
                 height += checkIndentation(propsContent.children[i]);
             }
             propsContent.style.maxHeight = height + "px";
+            propsToggle.classList.add("active");
             setTimeout(
                 ()=>{
                     propsContent.classList.add("show");
@@ -109,6 +110,7 @@ propsItems.forEach((propsItem)=>{
         else{
             propsContent.style.maxHeight = 0;
             propsContent.classList.remove("show");
+            propsToggle.classList.remove("active");
             openCheck = 0;
         }
     });
