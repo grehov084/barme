@@ -36,6 +36,10 @@ body{
     font-family: 'Geologica Regular';
     overflow-x: hidden;
 }
+.site{
+    position: relative;
+    overflow-x: hidden;
+}
 .container{
     width: 100%;
     height: inherit;
