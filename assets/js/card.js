@@ -1,6 +1,7 @@
-let sizeItems, sliderPictures, puctureSrc, mainPicture, propsItems;
+let sizeItems, sizePropsItems, sliderPictures, puctureSrc, mainPicture, propsItems;
 
 sizeItems = document.querySelectorAll(".card-params-size-item");
+sizePropsItems = document.querySelectorAll(".content-product-size-list-item");
 sliderPictures = document.querySelectorAll(".card-pic-list-item__img");
 mainPicture = document.querySelector(".card-pic-main__img");
 propsItems = document.querySelectorAll(".card-info-item-activator");
@@ -59,6 +60,15 @@ function checkIndentation(currentElemContent){
     return indentation;
 }
 
+sizePropsItems.forEach((sizePropsItem)=>{
+    sizePropsItem.addEventListener("click", ()=>{
+        let activePropSize = document.querySelector(".content-product-size-list-item.active");
+        activePropSize.classList.remove("active");
+        sizePropsItem.classList.add("active");
+        /* дописать ajax подкрузку параметров */
+    });
+});
+
 sizeItems.forEach((sizeItem)=>{
     sizeItem.addEventListener("click", ()=>{
         let activeSize = document.querySelector(".card-params-size-item.active");
@@ -87,7 +97,6 @@ propsItems.forEach((propsItem)=>{
                 console.log(propsContent.children[i].offsetHeight);
                 height += propsContent.children[i].offsetHeight;
                 height += checkIndentation(propsContent.children[i]);
-                
             }
             propsContent.style.maxHeight = height + "px";
             setTimeout(
