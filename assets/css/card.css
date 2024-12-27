@@ -2,7 +2,7 @@
 .card{
     padding-bottom: 100px;
 }
-.card-top{
+.card-top-wrap{
     display: flex;
     gap: 60px;
 }
@@ -285,6 +285,12 @@
 .catalog-item-fraction--borcolor{
     border-color: var(--pink) !important;
 }
+.card-left--mob{
+    display: none;
+}
+.card-pic-mob{
+    width: 100%;
+}
 @media screen {
     .card-action-basket:hover{
         background-color: var(--pink-hover);
@@ -352,7 +358,7 @@
     }
 }
 @media(max-width: 800px){
-    .card-top{
+    .card-top-wrap{
         flex-direction: column;
         justify-content: center;
     }
@@ -372,6 +378,12 @@
     .catalog-item-top--card {
         height: 300px !important;
         width: 220px !important;
+    }
+    .card-left{
+        display: none;
+    }
+    .card-left--mob{
+        display: block;
     }
 }
 @media(max-width: 385px){

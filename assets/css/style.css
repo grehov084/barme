@@ -889,7 +889,7 @@ body{
     padding-bottom: 24px;
 }
 /*=====================*/
-.breadcrumbs{
+.breadcrumbs-wrap{
     display: flex;
     gap: 5px;
     padding-bottom: 20px;
