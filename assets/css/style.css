@@ -1267,23 +1267,20 @@ body{
 }
 @media(max-width: 500px){
     .catalog-item-icons--card {
-        max-width: 151px !important;
+        max-width: 185px !important;
+        top: 45px;
     }
-}
-@media(max-width: 450px){
-    .catalog-item-icons--card {
-        top: 39px;
+    .catalog-item-top--card {
+        height: 300px !important;
+        width: 220px !important;
     }
 }
 @media(max-width: 385px){
     .catalog-item--card{
         height: 402px !important;
     }
-    .catalog-item-top--card {
-        height: 225px !important;
-    }
-    .catalog-item-icons--card {
-        max-width: 135px !important;
+    .card-bottom-title{
+        font-size: 24px;
     }
 }
 /*==========================*/
