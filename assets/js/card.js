@@ -185,7 +185,7 @@ careElems.forEach((careElem)=>{
     careElem.addEventListener("click", function(c){
         let activeCare, careElemContent;
         careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
-        alert(1);
+        alert(2);
         if(c.target.tagName == "SVG"){
             careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
         }
