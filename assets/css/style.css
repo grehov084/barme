@@ -892,7 +892,7 @@ body{
 .breadcrumbs-wrap{
     display: flex;
     gap: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 20px !important;
 }
 .breadcrumbs-item{
     font-size: 16px;
@@ -959,8 +959,15 @@ body{
     .buyers-item{
         max-width: 49%;
     }
+    /*
     .site-wrap{
         padding: 0 10px;
+    }*/
+    .breadcrumbs-wrap, .card-right, .card-bottom{
+        padding: 0 10px;
+    }
+    .card-left{
+        padding-left: 10px;
     }
 }
 @media(max-width: 1700px){
