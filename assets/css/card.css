@@ -429,7 +429,7 @@
         display: block;
     }
 }
-@media(max-width: 385px){
+@media(max-width: 390px){
     .catalog-item--card{
         height: 402px !important;
     }
