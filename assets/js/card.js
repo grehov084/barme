@@ -185,7 +185,7 @@ careElems.forEach((careElem)=>{
     careElem.addEventListener("click", function(c){
         let activeCare, careElemContent;
         careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
-        alert(3);
+        alert(4);
         if(c.target.tagName == "SVG"){
             careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
         }
@@ -197,8 +197,8 @@ careElems.forEach((careElem)=>{
         }
         activeCare = document.querySelectorAll(".item-care-elem__text.show");
         if(!careElemContent.classList.contains("show")){
-            fadeIn(careElemContent, 100);
             careElemContent.classList.add("show");
+            fadeIn(careElemContent, 100);
         }
         if(activeCare != null){
             for(let i=0; i<activeCare.length; i++){
