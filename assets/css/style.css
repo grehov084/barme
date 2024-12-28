@@ -52,7 +52,7 @@ body{
     overflow: hidden;
 }
 .site__header{
-    margin-bottom: 48px;
+    margin-bottom: 10px;
 }
 .site-header:not(.site-header--pos){
     border-bottom: 1px solid var(--grey-border);
