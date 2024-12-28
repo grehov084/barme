@@ -391,6 +391,8 @@
     .card-top-wrap{
         flex-direction: column;
         justify-content: center;
+    }
+    .card-pic-main{
         padding-right: 50px;
     }
     .card-right{
