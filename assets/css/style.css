@@ -1614,6 +1614,9 @@ body{
     .catalog-item-icons {
         max-width: 115px;
     }
+    .breadcrumbs-item{
+        font-size: 13px;
+    }
 }
 @media(max-width: 330px){
     .banner-item-content{
