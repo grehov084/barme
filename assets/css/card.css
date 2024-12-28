@@ -291,6 +291,24 @@
 .card-pic-mob{
     width: 100%;
 }
+.owl-dots{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+}
+.owl-dot{
+    border: 1px solid var(--white) !important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.owl-dot.active{
+    border-color: var(--pink) !important;
+    background-color: var(--pink) !important;
+}
 @media screen {
     .card-action-basket:hover{
         background-color: var(--pink-hover);
@@ -373,6 +391,7 @@
     .card-top-wrap{
         flex-direction: column;
         justify-content: center;
+        padding-right: 50px;
     }
     .card-right{
         max-width: 100%;
