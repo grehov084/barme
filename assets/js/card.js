@@ -182,7 +182,11 @@ careElems.forEach((careElem)=>{
     });
     careElem.addEventListener("click", function(c){
         let activeCare = document.querySelector(".item-care-elem__text.show");
-        fadeOut(activeCare, 100);
-        activeCare.classList.remove("show");
+
+        if(activeCare.innerHTML != careElem.innerHTML){
+            fadeOut(activeCare, 100);
+            activeCare.classList.remove("show");
+        }
+
     });
 });
