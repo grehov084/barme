@@ -119,6 +119,15 @@ $(document).ready(function(){
     $("#slider").owlCarousel({
         items: 1,
         loop: true,
-        pagination : true
+        pagination : true,
     });
-  });
+});
+
+Fancybox.bind(".card-pic-main__img", {
+     mainClass: "standart_modal", 
+     Image: { 
+        zoom: false, 
+        click: "close", 
+        wheel: "slide" 
+    } 
+});

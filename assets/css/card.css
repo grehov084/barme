@@ -255,8 +255,10 @@
     width: inherit;
     object-fit: cover;
     border-radius: 8px;
-
     cursor: url("../img/card/cursor.png"), pointer;
+}
+.can-zoom_in .fancybox__content{
+    cursor: url("../img/card/cursor.png"), pointer !important;
 }
 .card-bottom{
     padding-top: 100px;
@@ -307,6 +309,9 @@
 .owl-dot.active{
     border-color: var(--pink) !important;
     background-color: var(--pink) !important;
+}
+.card-pic-link{
+    width: inherit;
 }
 @media screen {
     .card-action-basket:hover{
