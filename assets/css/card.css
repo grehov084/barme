@@ -377,12 +377,18 @@
     .card-right{
         max-width: 100%;
     }
+    .card-right-top{
+        padding: 0 20px;
+    }
     .card-bottom-content{
         gap: 15px;
         overflow-y: scroll;
     }
     .card-info-item{
-        padding: 24px 10px;
+        padding: 24px 20px;
+    }
+    .card-bottom{
+        padding: 0 20px;
     }
 }
 @media(max-width: 500px){
