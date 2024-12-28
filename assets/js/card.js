@@ -175,7 +175,7 @@ careElems.forEach((careElem)=>{
     careElem.addEventListener("mouseout", function(e){
         let careElemInfo;
         careElemInfo = careElem.parentNode.querySelector(".item-care-elem__text");
-        if(e.relatedTarget.tagName != "svg" && e.relatedTarget.tagName != "path" && careElemInfo.classList.contains("show")){
+        if(e.relatedTarget != null && e.relatedTarget.tagName != "svg" && e.relatedTarget.tagName != "path" && careElemInfo.classList.contains("show")){
             careElemInfo.classList.remove("show");
             fadeOut(careElemInfo, 100);
         }
@@ -184,6 +184,6 @@ careElems.forEach((careElem)=>{
         let activeCare = document.querySelector(".item-care-elem__text.show");
         activeCare.classList.add("show");
         fadeOut(activeCare, 100);
-        alert(activeCare);
+        alert(activeCare.innerHTML);
     });
 });
