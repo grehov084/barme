@@ -196,6 +196,10 @@ careElems.forEach((careElem)=>{
             careElemContent = careElem.parentNode.querySelector(".item-care-elem__text");
         }
         activeCare = document.querySelectorAll(".item-care-elem__text.show");
+        if(!careElemContent.classList.contains("show")){
+            fadeIn(careElemContent, 100);
+            careElemContent.classList.add("show");
+        }
         for(let i=0; i<activeCare.length; i++){
             fadeOut(activeCare[i], 100);
             activeCare[i].classList.remove("show");
