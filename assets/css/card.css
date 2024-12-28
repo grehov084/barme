@@ -410,6 +410,7 @@
     }
     .card-bottom{
         padding: 0 20px;
+        padding-right: 0;
     }
 }
 @media(max-width: 500px){
