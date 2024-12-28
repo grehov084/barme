@@ -428,7 +428,7 @@
         display: block;
     }
 }
-@media(max-width: 391px){
+@media(max-width: 392px){
     .catalog-item--card{
         height: 420px !important;
     }
