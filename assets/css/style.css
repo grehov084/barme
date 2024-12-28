@@ -963,7 +963,7 @@ body{
     .site-wrap{
         padding: 0 10px;
     }*/
-    .breadcrumbs-wrap, .card-right, .card-bottom{
+    .breadcrumbs-wrap{
         padding: 0 10px;
     }
     .card-left{

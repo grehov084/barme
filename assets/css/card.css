@@ -302,6 +302,18 @@
         color: var(--white);
     }
 }
+@media(max-width: 1800px){
+    .card-bottom{
+        padding: 0 10px;
+        padding-top: 80px !important;
+    }
+    .card-right-top{
+        padding: 0 10px;
+    }
+    .card-right{
+        padding-right: 10px;
+    }
+}
 @media(max-width: 1420px){
     .card-right{
         max-width: 520px;
@@ -368,6 +380,9 @@
     .card-bottom-content{
         gap: 15px;
         overflow-y: scroll;
+    }
+    .card-info-item{
+        padding: 24px 10px;
     }
 }
 @media(max-width: 500px){
