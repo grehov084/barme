@@ -185,7 +185,7 @@ careElems.forEach((careElem)=>{
     careElem.addEventListener("click", function(c){
         let activeCare, careElemContent;
         careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
-        alert(2);
+        alert(3);
         if(c.target.tagName == "SVG"){
             careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
         }
@@ -200,10 +200,12 @@ careElems.forEach((careElem)=>{
             fadeIn(careElemContent, 100);
             careElemContent.classList.add("show");
         }
-        for(let i=0; i<activeCare.length; i++){
-            fadeOut(activeCare[i], 100);
-            activeCare[i].classList.remove("show");
-            break;
+        if(activeCare != null){
+            for(let i=0; i<activeCare.length; i++){
+                fadeOut(activeCare[i], 100);
+                activeCare[i].classList.remove("show");
+                break;
+            }
         }
     });
 });
