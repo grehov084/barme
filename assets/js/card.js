@@ -180,4 +180,8 @@ careElems.forEach((careElem)=>{
             fadeOut(careElemInfo, 100);
         }
     });
+    careElem.addEventListener("click", ()=>{
+        let activeCare = document.querySelector(".item-care-elem__text.show");
+        activeCare.classList.add("show");
+    });
 });
