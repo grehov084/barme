@@ -172,6 +172,7 @@ careElems.forEach((careElem)=>{
             fadeIn(careElemInfo, 200);
         }
     });
+    
     careElem.addEventListener("mouseout", function(e){
         let careElemInfo;
         careElemInfo = careElem.parentNode.querySelector(".item-care-elem__text");
@@ -180,13 +181,24 @@ careElems.forEach((careElem)=>{
             fadeOut(careElemInfo, 100);
         }
     });
+    
     careElem.addEventListener("click", function(c){
-        let activeCare = document.querySelector(".item-care-elem__text.show");
-        alert(1);
-        if(activeCare.innerHTML != careElem.innerHTML){
-            fadeOut(activeCare, 100);
-            activeCare.classList.remove("show");
+        let activeCare, careElemContent;
+        careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
+        if(c.target.tagName == "SVG"){
+            careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
         }
-
+        else if(c.target.tagName == "PATH"){
+            careElemContent = careElem.parentNode.parentNode.parentNode.querySelector(".item-care-elem__text");
+        }
+        else{
+            careElemContent = careElem.parentNode.querySelector(".item-care-elem__text");
+        }
+        activeCare = document.querySelectorAll(".item-care-elem__text.show");
+        for(let i=0; i<activeCare.length; i++){
+            fadeOut(activeCare[i], 100);
+            activeCare[i].classList.remove("show");
+            break;
+        }
     });
 });
