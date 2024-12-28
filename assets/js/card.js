@@ -181,10 +181,11 @@ careElems.forEach((careElem)=>{
             fadeOut(careElemInfo, 100);
         }
     });
-    
+
     careElem.addEventListener("click", function(c){
         let activeCare, careElemContent;
         careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
+        alert(1);
         if(c.target.tagName == "SVG"){
             careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
         }
