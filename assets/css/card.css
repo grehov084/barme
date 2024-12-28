@@ -427,6 +427,16 @@
     .card-left--mob{
         display: block;
     }
+    .owl-carousel.owl-drag .owl-item{
+        height: 538px;
+    } 
+    .card-slider-item{
+        height: inherit;
+    }
+    .card-slider-img{
+        height: inherit;
+        object-fit: cover;
+    }
 }
 @media(max-width: 392px){
     .catalog-item--card{
