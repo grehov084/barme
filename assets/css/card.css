@@ -225,9 +225,6 @@
     flex-direction: column;
     align-items: center;
 }
-.item-care-elem__text.show{
-    
-}
 .item-care-bottom{
     display: flex;
     gap: 12px;
@@ -429,6 +426,16 @@
     .card-bottom{
         padding: 0 20px;
         padding-right: 0;
+    }
+}
+@media(max-width: 550px){
+    .content-structure-item{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .item-care-bottom{
+        justify-content: center;
     }
 }
 @media(max-width: 500px){

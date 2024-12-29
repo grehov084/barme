@@ -72,12 +72,13 @@ function fadeIn(el, timeout, display){
 }
 
 function fadeOut(el, timeout){
-    el.style.opacity = 1;
+    //el.style.opacity = 1;
     el.style.transition = `opacity ${timeout}ms`;
     el.style.opacity = 0;
     body.style.cssText = "";
     setTimeout(() => {
-       el.style.display = 'none';
+      // el.style.display = 'none';
+      el.removeAttribute("style");
     }, timeout); 
 }
 
@@ -86,7 +87,7 @@ sizePropsItems.forEach((sizePropsItem)=>{
         let activePropSize = document.querySelector(".content-product-size-list-item.active");
         activePropSize.classList.remove("active");
         sizePropsItem.classList.add("active");
-        /* дописать ajax подкрузку параметров */
+        /* дописать ajax подгрузку параметров */
     });
 });
 
@@ -136,6 +137,7 @@ propsItems.forEach((propsItem)=>{
         }
     });
 });
+
 $(document).ready(function(){
     $("#slider").owlCarousel({
         items: 1,
@@ -153,59 +155,55 @@ Fancybox.bind(".card-pic-main__img", {
     } 
 });
 
-
-
 careElems.forEach((careElem)=>{
-    careElem.addEventListener("mouseover", function(e){
-        let careElemInfo;
-        if(e.target.tagName == "SVG"){
-            careElemInfo = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
-        }
-        else if(e.target.tagName == "PATH"){
-            careElemInfo = careElem.parentNode.parentNode.parentNode.querySelector(".item-care-elem__text");
-        }
-        else{
-            careElemInfo = careElem.parentNode.querySelector(".item-care-elem__text");
-        }
-        if(!careElemInfo.classList.contains("show")){
-            careElemInfo.classList.add("show");
-            fadeIn(careElemInfo, 200);
-        }
-    });
-    
-    careElem.addEventListener("mouseout", function(e){
-        let careElemInfo;
-        careElemInfo = careElem.parentNode.querySelector(".item-care-elem__text");
-        if(e.relatedTarget != null && e.relatedTarget.tagName != "svg" && e.relatedTarget.tagName != "path" && careElemInfo.classList.contains("show")){
-            careElemInfo.classList.remove("show");
-            fadeOut(careElemInfo, 100);
-        }
-    });
-
-    careElem.addEventListener("click", function(c){
-        let activeCare, careElemContent;
-        careElemContent = c.target.parentNode.parentNode.querySelector(".item-care-elem__text");
-        alert(4);
-        if(c.target.tagName == "SVG"){
-            careElemContent = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
-        }
-        else if(c.target.tagName == "PATH"){
-            careElemContent = careElem.parentNode.parentNode.parentNode.querySelector(".item-care-elem__text");
-        }
-        else{
-            careElemContent = careElem.parentNode.querySelector(".item-care-elem__text");
-        }
-        activeCare = document.querySelectorAll(".item-care-elem__text.show");
-        if(!careElemContent.classList.contains("show")){
-            careElemContent.classList.add("show");
-            fadeIn(careElemContent, 100);
-        }
-        if(activeCare != null){
-            for(let i=0; i<activeCare.length; i++){
-                fadeOut(activeCare[i], 100);
-                activeCare[i].classList.remove("show");
-                break;
+    if(window.innerWidth > 768){
+        careElem.addEventListener("mouseover", function(e){
+            console.log("over");
+            let careElemInfo;
+            if(e.target.tagName == "SVG"){
+                careElemInfo = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
             }
-        }
-    });
+            else if(e.target.tagName == "PATH"){
+                careElemInfo = careElem.parentNode.parentNode.parentNode.querySelector(".item-care-elem__text");
+            }
+            else{
+                careElemInfo = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
+            }
+            if(!careElemInfo.classList.contains("show")){
+                careElemInfo.classList.add("show");
+                fadeIn(careElemInfo, 200);
+            }
+        });
+        
+        careElem.addEventListener("mouseout", function(e){
+            let careElemInfoOut;
+            careElemInfo = careElem.parentNode.querySelector(".item-care-elem__text");
+            if(e.relatedTarget != null && e.relatedTarget.tagName != "svg" && e.relatedTarget.tagName != "path" && careElemInfoOut.classList.contains("show")){
+                careElemInfoOut.classList.remove("show");
+                fadeOut(careElemInfoOut, 100);
+            }
+        });
+    }
+    if(window.innerWidth < 768){
+        careElem.addEventListener("click", function(c){
+            let activeCare, careElemContent;
+            careElem = null;
+            careElemContent = null;
+            activeCare = Array();
+            if(c.target.tagName == "IMG" || c.target.tagName == "svg"){
+                careElem = c.target.parentNode.parentNode;
+            }
+            else if(c.target.tagName == "path"){
+                careElem = c.target.parentNode.parentNode.parentNode;
+            }
+            careElemContent = careElem.querySelector('.item-care-elem__text');
+            activeCare = document.querySelector(".item-care-elem__text.show");
+            if(activeCare != null){
+                fadeOut(activeCare, 200);
+                activeCare.classList.remove("show"); 
+            }
+            careElemContent.classList.add("show");
+            fadeIn(careElemContent, 200);   
+        });
+    }
 });
