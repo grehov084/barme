@@ -158,7 +158,6 @@ Fancybox.bind(".card-pic-main__img", {
 careElems.forEach((careElem)=>{
     if(window.innerWidth > 768){
         careElem.addEventListener("mouseover", function(e){
-            console.log("over");
             let careElemInfo;
             if(e.target.tagName == "SVG"){
                 careElemInfo = careElem.parentNode.parentNode.querySelector(".item-care-elem__text");
