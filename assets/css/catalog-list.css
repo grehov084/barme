@@ -132,9 +132,25 @@
         align-items: start;
     }
 }
+@media(max-width: 550px){
+    .catalog-settings-view{
+        display: none;
+    }
+    .catalog-top-left{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .catalog-setting-type-list{
+        right: 10px;
+        left: unset;
+    }
+}
 @media(max-width: 450px){
     .catalog-item__img{
         max-height: 140px;
+    }
+    .catalog-setting-type-list{
+        right: 0;
     }
 }
 @media(max-width: 411px){
