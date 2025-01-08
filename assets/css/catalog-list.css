@@ -125,6 +125,11 @@
         align-items: start;
     }
 }
+@media(max-width: 450px){
+    .catalog-item__img{
+        max-height: 140px;
+    }
+}
 @media(max-width: 411px){
     .catalog-item-left{
         gap: 13px;
