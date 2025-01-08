@@ -114,6 +114,9 @@
     .catalog-left{
         display: none;
     }
+    .catalog-top-left{
+        padding-left: 10px;
+    }
 }
 @media(max-width: 700px){
     .catalog-item-pic{

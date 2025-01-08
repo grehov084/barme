@@ -235,6 +235,9 @@
     .catalog-left{
         display: none;
     }
+    .catalog-top-left{
+        padding-left: 10px;
+    }
     .catalog-item {
         max-width: 300px;
     }
