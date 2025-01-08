@@ -73,3 +73,119 @@
     justify-content: center;
     align-items: center;
 }
+.catalog-item-icons{
+    z-index: 997;
+}
+.catalog-filter-mob{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background-color: var(--grey);
+    width: max-content;
+    padding: 11px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: max-content;
+}
+@media(min-width: 1001px){
+    .catalog-filter-mob{
+        display: none;
+    }
+}
+@media(max-width: 1800px){
+    .catalog-left{
+        padding-left: 10px;
+    }
+    .catalog-right{
+        padding-right: 10px;
+    }
+    .catalog-title{
+        padding: 0 10px 32px 10px;
+    }
+}
+@media(max-width: 1610px){
+    .catalog-item {
+        max-width: 345px;
+    }
+    .catalog-item-top {
+        height: 520px;
+    }
+    .catalog-item-icons{
+        padding: 0 10px;
+    }
+}
+@media(max-width: 1552px){
+    .catalog-item {
+        max-width: 323px;
+    }
+    .catalog-item-icons {
+        max-width: 287px;
+    }
+    .catalog-item{
+        height: max-content;
+    }
+    .catalog-item-top {
+        height: 430px;
+    }
+}
+@media(max-width: 1486px){
+    .catalog-item {
+        max-width: 295px;
+    }
+    .catalog-item-icons {
+        max-width: 265px;
+    }
+}
+@media(max-width: 1400px){
+    .catalog-item {
+        max-width: 275px;
+    }
+    .catalog-item-icons {
+        max-width: 245px;
+    }
+    .catalog-item-top {
+        height: 370px;
+    }
+}
+@media(max-width: 1001px){
+    .catalog-left{
+        display: none;
+    }
+}
+@media(max-width: 430px){
+    .catalog-right{
+        padding: 0 10px;
+    }
+}
+@media(max-width: 395px){
+    .catalog-filter-mob-text, .catalog-setting-type-current-text{
+        font-size: 13px;
+    }
+    .catalog-filter-mob{
+        padding: 6px 20px;
+    }
+}
+@media(max-width: 355px){
+    .catalog-filter-mob {
+        padding: 6px 11px;
+    }
+    .catalog-setting-type-current{
+        padding: 11px;
+    }
+}
+@media(max-width: 340px){
+    .catalog-pagination{
+        gap: 0;
+    }
+}
+@media (max-width: 335px) {
+    .catalog-settings-view-item__link{
+        padding: 7px;
+    }
+    .catalog-list{
+        justify-content: space-between;
+    }
+    .catalog-item-fraction-text {
+        font-size: 11px;
+    }
+}

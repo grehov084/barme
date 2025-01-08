@@ -692,7 +692,6 @@ body{
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--pink);
 }
 .about-container{
     background-color: rgba(245, 245, 245, 1);
