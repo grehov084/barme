@@ -106,6 +106,9 @@
     .catalog-title{
         padding: 0 10px 32px 10px;
     }
+    .catalog-list{
+        justify-content: space-between;
+    }
 }
 @media(max-width: 1610px){
     .catalog-item {
